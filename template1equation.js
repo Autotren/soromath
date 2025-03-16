@@ -241,11 +241,10 @@ function template1enter(e, press=false){
       let height1 = problems.children[mainproblemindex].getBoundingClientRect().height
       let height2 = problems.children[mainproblemindex+1].getBoundingClientRect().height
 
-      let shifttop = (height1 + height2) / 2
+      let shifttop = ((height1 + height2) / 2) + 10 // 10px of margin
 
       problems.children[mainproblemindex].id = "";
       problems.children[mainproblemindex+1].id = "mainproblem";
-
 
       let top = parseInt(window.getComputedStyle(problems).top);
 
