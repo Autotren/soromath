@@ -38,7 +38,7 @@ function addfraction(main=false,difficulty=0,name=null){
 
   let problem = document.createElement("p");
 
-  problem.innerHTML = `\\frac${frac1[0]}${frac1[1]}+\\frac${frac2[0]}${frac2[1]}`;
+  problem.innerHTML = `\\frac${frac1[0]}${frac1[1]}+\\frac${frac2[0]}${frac2[1]}=`;
   problem.classList.add("problem");
   problem.classList.add("fractionproblem");
 
@@ -74,7 +74,7 @@ function fractiontype(e){
   let input = document.getElementsByClassName("maininput")[0];
 
   let nonums = "";
-  let nums = "-0123456789sqrt()./inf"
+  let nums = "-0123456789sqrt()./inf,"
 
   for(var i = 0; i < input.value.length; i++){
     if(nums.indexOf(input.value[i]) == -1) continue;

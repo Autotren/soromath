@@ -69,13 +69,15 @@
   margin-bottom: 0px;
   white-space: nowrap;
   right: 0px;
-  height: 40px;
+  /* height: 40px; */
   display:flex;
   align-items: center;
   justify-content: right;
 }
 
-.trigproblem{
+/* Revisit */
+
+/* .trigproblem{
   height: 90px;
 }
 
@@ -93,7 +95,7 @@
 
 .quadraticproblem{
   height: 55px;
-}
+} */
 
 .clockproblem{
   margin-right:0px;

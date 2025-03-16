@@ -107,13 +107,13 @@ function addlinear(main=false,self=linearpreset,name=null){
 
   let part1 = problemarr[0];
 
-  if(problemarr[1] < 0) part1 += " - " + Math.abs(problemarr[1]);
+  if(problemarr[1] < 0) part1 += "-" + Math.abs(problemarr[1]);
   else part1 += " + " + problemarr[1];
 
-  part1 += " = " + problemarr[2];
+  part1 += "=" + problemarr[2];
 
-  if(problemarr[3] < 0) part1 += " - " + Math.abs(problemarr[3]);
-  else part1 += " + " + problemarr[3];
+  if(problemarr[3] < 0) part1 += "-" + Math.abs(problemarr[3]);
+  else part1 += "+" + problemarr[3];
 
   problem.innerHTML = part1;
   problem.classList.add("problem");
@@ -125,8 +125,8 @@ function addlinear(main=false,self=linearpreset,name=null){
   let problems = document.getElementsByClassName("mainproblems")[0];
   problems.appendChild(problem);
 
-
-
+  katex.render(problem.innerHTML, problem);
+  
   return problem;
 
 }

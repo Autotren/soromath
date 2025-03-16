@@ -36,10 +36,10 @@ function addtrig(main=false,difficulty=0,name=null){
   let problem = document.createElement("p");
 
   if(angle.length == 2){
-    problem.innerHTML = `\\${func}(\\frac{${angle[0]}{\\pi}}{${angle[1]}})`;
+    problem.innerHTML = `\\${func}(\\frac{${angle[0]}{\\pi}}{${angle[1]}})=`;
   }
   if(angle.length == 1){
-    problem.innerHTML = `\\${func}(${angle[0]}{\\pi})`;
+    problem.innerHTML = `\\${func}(${angle[0]}{\\pi})=`;
   }
 
   problem.classList.add("problem");
@@ -83,7 +83,7 @@ function trigtype(e){
   let input = document.getElementsByClassName("maininput")[0];
 
   let nonums = "";
-  let nums = "-0123456789sqrt()./inf"
+  let nums = "-0123456789sqrt()./inf,"
 
   for(var i = 0; i < input.value.length; i++){
     if(nums.indexOf(input.value[i]) == -1) continue;

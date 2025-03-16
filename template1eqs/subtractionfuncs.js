@@ -72,12 +72,14 @@ function addsubtraction(main=false,self=subtractionpreset,name=null){
   if(recentduplicate()) return;
 
   let problem = document.createElement("p");
-  problem.innerHTML = num1 + "-" + num2 + " " + "="
+  problem.innerHTML = num1 + "-" + num2 + "="
   problem.classList.add("problem");
   if(main) problem.id = "mainproblem"
 
   let problems = document.getElementsByClassName("mainproblems")[0];
   problems.appendChild(problem);
+
+  katex.render(problem.innerHTML, problem);
 
   return problem;
 

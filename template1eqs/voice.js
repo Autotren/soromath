@@ -94,32 +94,24 @@ function showvoicecontainer(){
 
 function synthesisvoice(text){
 
-  let voices = synth.getVoices();
+  const utterance = new SpeechSynthesisUtterance(text);
 
-  const utterThis = new SpeechSynthesisUtterance(text);
+  // console.log(speechSynthesis.getVoices());
+
+  utterance.lang = "en-GB";
+  // Fix this
+  utterance.voice = speechSynthesis.getVoices().find((voice) => voice.name.includes("Daniel"))
+
+  utterance.rate = voicerate;
+  utterance.volume = voicevolume;
 
 
-  for(var i = 0; i < voices.length; i++){
-
-    if(voices[i] == "en-US"){
-      utterThis.voice = voices[i];
-    }
-
-
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
   }
 
-  console.log(voicevolume);
+  // console.log("SPEAK");
 
-  utterThis.rate = voicerate;
-  utterThis.volume = voicevolume;
-
-
-  if (synth.speaking) {
-    synth.cancel();
-  }
-
-  console.log("SPEAK");
-
-  synth.speak(utterThis);
+  speechSynthesis.speak(utterance)
 
 }

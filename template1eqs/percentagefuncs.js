@@ -350,7 +350,7 @@ function percentagetype(e){
   let input = document.getElementsByClassName("maininput")[0];
 
   let nonums = "";
-  let nums = "-0123456789."
+  let nums = "-0123456789.,"
 
   for(var i = 0; i < input.value.length; i++){
     if(nums.indexOf(input.value[i]) == -1) continue;
