@@ -243,3 +243,20 @@ function openInNewTab(url) {
   var win = window.open(url, '_blank');
   win.focus();
 }
+
+
+function changeInputMode() {
+  var inputField = document.getElementById("template1input");
+  var keyboardModeButton = document.getElementById("keyboardmode");
+  if (inputField.getAttribute("inputmode") == "text")
+  {
+    inputField.setAttribute( "inputmode", "decimal")
+    keyboardModeButton.innerText = "🔢";
+  }
+  else
+  {
+    inputField.setAttribute( "inputmode", "text")
+    keyboardModeButton.innerText = "🔡";
+  }
+  // inputField.focus();
+}

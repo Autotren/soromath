@@ -159,7 +159,9 @@ function template1enter(e, press=false){
        return;
      }
 
-    let inputnumber = input.value;
+    // let inputnumber = input.value;
+    let inputnumber = input.value.replace(",", ".");
+
     let mainproblemindex = problemindex;
     let problemtype = problemlist[problemindex][0];
 

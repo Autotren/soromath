@@ -2,16 +2,6 @@
 
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7EZB58MSVD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-7EZB58MSVD');
-  </script>
-	
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -43,21 +33,13 @@
 
   <link rel="stylesheet" href="styles/modesettings.css">
 
-  <script src="jquery.min.js"></script>
+  <script src="res/jquery-3.7.1.min.js"></script>
+  <script src="res/jquery-ui-1.14.1.min.js"></script>
+  <script src="res/Chart.min.js"></script>
+  <script src="res/katex.min.js"></script>
+  <link rel="stylesheet" href="res/katex.min.css">
+  <script src="res/auto-render.min.js"></script>
 
-  <script
-			  src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
-			  integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
-			  crossorigin="anonymous"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
-
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-        onload="renderMathInElement(document.body);"></script>
-  </head>
 
   <script src="template1eqs/voice.js"></script>
 
@@ -111,29 +93,24 @@
   <!-- your content here... -->
 
   <div id="iconcontainer">
-    <img src="images/icon.png" id="iconlogo"></img>
+    <img title="Logo" src="images/icon.png" id="iconlogo"></img>
   </div>
 
   <div id = "tabbuttons">
 
-    <button id="flashproblemsbutton" class="zulubutton tabbutton currenttab" onclick="switchtab('flashproblems')">
+    <button title="Flash Problems button" id="flashproblemsbutton" class="zulubutton tabbutton currenttab" onclick="switchtab('flashproblems')">
 
-      <img class="tabimg" src="images/flashproblems.png"></img>
-
-    </button>
-    <button id="flashprofilebutton" class="zulubutton tabbutton" onclick="switchtab('flashprofile'); profileinit()">
-
-      <img class="tabimg" src="images/flashprofile.png"></img>
+      <img title="Flash Problems Icon" class="tabimg" src="images/flashproblems.png"></img>
 
     </button>
-    <button id="flashprofilebutton" class="zulubutton tabbutton" onclick="openInNewTab('https://discord.gg/VRbbwbD9yv')">
+    <button title="Profile button" id="flashprofilebutton" class="zulubutton tabbutton" onclick="switchtab('flashprofile'); profileinit()">
 
-      <img class="tabimg" src="images/discord.png"></img>
+      <img title="Profile image" class="tabimg" src="images/flashprofile.png"></img>
 
     </button>
-    <button id="flashprofilebutton" class="zulubutton tabbutton" onclick="openInNewTab('https://github.com/WarpRomo/soromath')">
+    <button title="Github link" id="flashprofilebutton" class="zulubutton tabbutton" onclick="openInNewTab('https://github.com/WarpRomo/soromath')">
 
-      <img class="tabimg" src="images/github.png"></img>
+      <img title="Github icon" class="tabimg" src="images/github.png"></img>
 
     </button>
 
@@ -322,8 +299,9 @@
 
           <div class="inpandexample">
             <div class="numrestart">
-              <input class="numinput maininput" placeholder="Type here" id="template1input" oninput = "template1type(event); template1enter(event)" onkeypress = "template1enter(event,true)"></input>
+              <input class="numinput maininput" inputmode="text" placeholder="Type here" id="template1input" oninput = "template1type(event); template1enter(event)" onkeypress = "template1enter(event,true)"></input>
               <button id="voicerestart" class="zulubutton" onclick="revoiceproblem()" style="display: none">🗣️</button>
+              <button id="keyboardmode" class="zulubutton" onclick="changeInputMode()">🔡</button>
               <button id="restarttest" class="zulubutton" onclick="restarttest()">↻</button>
 
             </div>
